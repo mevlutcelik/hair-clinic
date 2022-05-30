@@ -22,16 +22,17 @@ $transition-time: 0.3s;
 
 ::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
-    &:hover{
-        background: rgba(0,0,0,0.5);
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
     }
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-img{
+img {
     height: 100%;
 }
 
@@ -39,10 +40,13 @@ img{
     width: 100vw;
     height: 100vh;
     background-color: #fff;
-    span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
         background-color: $color-primary-dark;
     }
-    .swiper-button-next,.swiper-button-prev{
+
+    .swiper-button-next,
+    .swiper-button-prev {
         background-color: $color-primary-dark;
         color: #fff;
         padding: 1rem;
@@ -51,11 +55,13 @@ img{
         border-radius: 50%;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
         transition: all $transition-time;
-        &:hover{
+
+        &:hover {
             background-color: #fff;
             color: $color-primary-dark;
         }
     }
+
     .swiper-slide img {
         width: 100%;
         height: 100%;
@@ -70,11 +76,12 @@ img{
         top: 50%;
         object-fit: cover;
     }
-    .swiper-card{
+
+    .swiper-card {
         position: absolute;
         top: calc(50% - (30rem / 2));
         left: 12rem;
-        background-color: rgba(255,255,255,0.7);
+        background-color: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(1rem);
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
         padding: 2rem 4rem;
@@ -85,31 +92,37 @@ img{
         flex-direction: column;
         justify-content: space-evenly;
         transition: all $transition-time;
-        &:hover{
+
+        &:hover {
             transform: scale(1.05);
         }
-        &:active{
+
+        &:active {
             transform: scale(0.95);
         }
-        h1{
+
+        h1 {
             font-size: 4rem;
             font-weight: 700;
             letter-spacing: 1px;
-            span{
+
+            span {
                 color: $color-primary-dark;
             }
         }
-        h2{
+
+        h2 {
             font-size: 2rem;
             font-weight: 300;
         }
-        p{
+
+        p {
             font-size: 1.55rem;
         }
     }
 }
 
-.whatsapp{
+.whatsapp {
     position: fixed;
     z-index: 2;
     bottom: 2rem;
@@ -124,18 +137,20 @@ img{
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     transition: all $transition-time;
-    svg{
+
+    svg {
         height: 2rem;
         width: 2rem;
         fill: currentColor;
     }
-    &:hover{
+
+    &:hover {
         background-color: #fff;
         color: $color-green-dark;
     }
 }
 
-nav{
+nav {
     position: absolute;
     top: 0;
     z-index: 2;
@@ -146,35 +161,41 @@ nav{
     padding: 2rem 4rem;
     width: calc(100% - (4rem * 2));
     pointer-events: none;
-    .logo{
+
+    .logo {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         height: 5rem;
         pointer-events: initial;
-        img{
+
+        img {
             object-fit: cover;
         }
     }
-    .links{
+
+    .links {
         display: flex;
         align-items: center;
-        .location{
+
+        .location {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 3rem;
             font-size: 1rem;
             font-weight: 600;
-            svg{
+
+            svg {
                 height: 1.5rem;
                 margin-right: 1rem;
             }
         }
-        a{
+
+        a {
             pointer-events: initial;
             text-decoration: none;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             color: $color-primary-dark;
             backdrop-filter: blur(1rem);
             display: inline-flex;
@@ -188,27 +209,135 @@ nav{
             font-weight: 500;
             transition: all $transition-time;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-            svg{
+
+            svg {
                 height: 1rem;
                 margin-right: 0.5rem;
                 fill: currentColor;
             }
-            &.cta{
+
+            &.cta {
                 background-color: $color-green-dark;
                 color: #fff;
                 font-weight: 600;
-                &:hover{
+
+                &:hover {
                     background-color: #fff;
                     color: $color-green-dark;
                 }
             }
-            &:last-child{
+
+            &:last-child {
                 margin-right: 0;
             }
-            &:hover{
+
+            &:hover {
                 background-color: $color-primary-dark;
                 color: #fff;
             }
+        }
+    }
+}
+
+.plan-cards {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+
+    .row {
+        background-color: #fff;
+        max-width: 70rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .plan-card {
+        background-color: #fff;
+        width: calc(((100% / 3) - 2rem) - (2rem * 2));
+        margin-right: 2rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #372943;
+        box-shadow: 0px 0px 35px 1px rgb(55, 41, 67, 0.1);
+
+        .plan-num {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: 700;
+        }
+
+        .plan-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .plan-dvider {
+            height: 3px;
+            text-align: center;
+            width: 40%;
+            background-color: #e8e8e8;
+            border-radius: 1rem;
+            margin: 1rem 0 2rem;
+        }
+
+        a {
+            background-color: $color-green-dark;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            padding: 0 1rem;
+            border-radius: 0.25rem;
+            transition: all $transition-time;
+            margin-top: 3rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+
+            svg {
+                height: 0.75rem;
+                fill: currentColor;
+                margin-left: 0.5rem;
+                transition: all $transition-time;
+            }
+
+            &:hover {
+                svg {
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.875rem;
+                font-weight: 500;
+
+                svg {
+                    height: 1rem;
+                    margin-right: 0.5rem;
+                    fill: $color-green-dark;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

@@ -34,7 +34,8 @@ img {
 .swiper span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #ca0000;
 }
-.swiper .swiper-button-next, .swiper .swiper-button-prev {
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
   background-color: #ca0000;
   color: #fff;
   padding: 1rem;
@@ -44,7 +45,8 @@ img {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   transition: all 0.3s;
 }
-.swiper .swiper-button-next:hover, .swiper .swiper-button-prev:hover {
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover {
   background-color: #fff;
   color: #ca0000;
 }
@@ -203,4 +205,93 @@ nav .links a:last-child {
 nav .links a:hover {
   background-color: #ca0000;
   color: #fff;
+}
+
+.plan-cards {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+}
+.plan-cards .row {
+  background-color: #fff;
+  max-width: 70rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plan-cards .plan-card {
+  background-color: #fff;
+  width: calc(33.3333333333% - 2rem - 4rem);
+  margin-right: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #372943;
+  box-shadow: 0px 0px 35px 1px rgba(55, 41, 67, 0.1);
+}
+.plan-cards .plan-card .plan-num {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.plan-cards .plan-card .plan-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+.plan-cards .plan-card .plan-dvider {
+  height: 3px;
+  text-align: center;
+  width: 40%;
+  background-color: #e8e8e8;
+  border-radius: 1rem;
+  margin: 1rem 0 2rem;
+}
+.plan-cards .plan-card a {
+  background-color: #008000;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s;
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.plan-cards .plan-card a svg {
+  height: 0.75rem;
+  fill: currentColor;
+  margin-left: 0.5rem;
+  transition: all 0.3s;
+}
+.plan-cards .plan-card a:hover svg {
+  margin-left: 1rem;
+}
+.plan-cards .plan-card ul {
+  list-style: none;
+}
+.plan-cards .plan-card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.plan-cards .plan-card ul li svg {
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: #008000;
+}
+.plan-cards .plan-card:last-child {
+  margin-right: 0;
 }

@@ -27,7 +27,7 @@
                     <h2>Clinic for you beauty</h2>
                 </div>
                 <div>
-                    <p>Get your <strong>perfect hair transform</strong> with reasonable prices in one of the largest hospitals in Turkey. Get your <strong>FREE</strong> personal hair analysis by our medical experts</p>
+                    <p>Get your <strong>perfect hair transform</strong> with reasonable prices in one of the largest hospitals in Turkey. Get your <strong>FREE</strong> personal hair analysis by our medical experts.</p>
                 </div>
             </div>
         </div>
