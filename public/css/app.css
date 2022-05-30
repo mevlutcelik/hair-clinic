@@ -212,7 +212,7 @@ nav .links a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 .plan-cards .row {
   background-color: #fff;
@@ -294,4 +294,11 @@ nav .links a:hover {
 }
 .plan-cards .plan-card:last-child {
   margin-right: 0;
+}
+
+.black-image {
+  background-image: url(/images/black-image.jpg?9790bb6cd3b649dd8cccb130b8ffb0a7);
+  background-size: cover;
+  height: 20rem;
+  width: 100%;
 }
