@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap);
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: "Playfair Display", system-ui, sans-serif;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
@@ -11,21 +12,22 @@ body {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background: transparent;
+a,
+button {
+  font-family: "Poppins", system-ui, sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+a span,
+button span {
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+input,
+textarea {
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
 img {
@@ -39,6 +41,14 @@ img {
 }
 .swiper span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #ca0000;
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-rtl .swiper-button-next {
+  left: 2rem;
+}
+.swiper .swiper-button-next,
+.swiper .swiper-rtl .swiper-button-prev {
+  right: 2rem;
 }
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
@@ -116,7 +126,7 @@ img {
   position: fixed;
   z-index: 2;
   bottom: 2rem;
-  left: 4rem;
+  right: 4rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -377,7 +387,7 @@ nav .links a:hover {
 }
 .map .user-card img {
   border-radius: 0.5rem 0 0 0.5rem;
-  margin-right: 2rem;
+  margin-right: 4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 .map .user-card div {
@@ -433,7 +443,7 @@ nav .links a:hover {
   width: calc(100% - 1.5rem);
   font-size: 0.875rem;
   font-weight: 500;
-  min-height: 2.75rem;
+  min-height: 11rem;
   padding: 0.75rem;
   margin-bottom: 1rem;
   outline: none;
@@ -452,4 +462,97 @@ nav .links a:hover {
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   color: #fff;
+}
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
+  position: relative;
+}
+.partners h2 {
+  font-size: 3rem;
+}
+.partners h2 ~ p {
+  font-size: 1.75rem;
+  margin: 1rem 0;
+}
+.partners #partners {
+  height: 8rem;
+  margin-top: 4rem;
+}
+.partners #partners .swiper-slide {
+  background: #f1d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+.partners #partners .swiper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 60rem;
+  margin: 2rem auto 0;
+}
+footer svg {
+  width: 3rem;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}
+footer svg path {
+  stroke: #ca0000;
+}
+footer .card {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-right: 2rem;
+  display: flex;
+  height: 20rem;
+  min-width: 20rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  border-radius: 0.5rem;
+  color: #372943;
+}
+footer .card .card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+footer .card .card-desc {
+  text-align: center;
+  max-width: 86%;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+footer .card .card-desc strong {
+  color: #000;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+footer .card:last-child {
+  margin-right: 0;
+}
+footer .footer-text {
+  font-family: "Poppins", system-ui, sans-serif;
+  margin: 2rem 0 4rem;
 }

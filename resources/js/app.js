@@ -48,10 +48,6 @@ const swiperComments = new Swiper("#comments", {
     loop: true,
     grabCursor: true,
     lazy: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
 
     // If we need pagination
     pagination: {
@@ -65,4 +61,27 @@ const swiperComments = new Swiper("#comments", {
             spaceBetween: 0,
         },
     },
+});
+
+const swiperPartners = new Swiper("#partners", {
+    slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+    breakpoints: {
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 6,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 8,
+          spaceBetween: 50,
+        },
+      },
 });

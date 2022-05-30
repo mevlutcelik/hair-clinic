@@ -2109,10 +2109,6 @@ var swiperComments = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]("
   loop: true,
   grabCursor: true,
   lazy: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -2123,6 +2119,28 @@ var swiperComments = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]("
     480: {
       slidesPerView: 1,
       spaceBetween: 0
+    }
+  }
+});
+var swiperPartners = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]("#partners", {
+  slidesPerView: 2,
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 40
+    },
+    1024: {
+      slidesPerView: 8,
+      spaceBetween: 50
     }
   }
 });
