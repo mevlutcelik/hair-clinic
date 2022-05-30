@@ -3,10 +3,16 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", system-ui, sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
   height: 8px;
   background: transparent;
 }
@@ -39,11 +45,16 @@ img {
   background-color: #ca0000;
   color: #fff;
   padding: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   transition: all 0.3s;
+}
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .swiper .swiper-button-next:hover,
 .swiper .swiper-button-prev:hover {
@@ -136,7 +147,7 @@ nav {
   justify-content: space-between;
   background-color: transparent;
   padding: 2rem 4rem;
-  width: calc(100% - 8rem);
+  width: 100%;
   pointer-events: none;
 }
 nav .logo {
@@ -216,7 +227,7 @@ nav .links a:hover {
 }
 .plan-cards .row {
   background-color: #fff;
-  max-width: 70rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -232,16 +243,17 @@ nav .links a:hover {
   justify-content: center;
   align-items: center;
   color: #372943;
+  border-radius: 0.5rem;
   box-shadow: 0px 0px 35px 1px rgba(55, 41, 67, 0.1);
 }
 .plan-cards .plan-card .plan-num {
   text-align: center;
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 .plan-cards .plan-card .plan-title {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   margin: 0.5rem 0 1rem;
 }
@@ -254,7 +266,7 @@ nav .links a:hover {
   margin: 1rem 0 2rem;
 }
 .plan-cards .plan-card a {
-  background-color: #008000;
+  background-color: #ca0000;
   color: #fff;
   text-decoration: none;
   display: flex;
@@ -267,12 +279,17 @@ nav .links a:hover {
   margin-top: 3rem;
   font-size: 0.875rem;
   font-weight: 500;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 .plan-cards .plan-card a svg {
   height: 0.75rem;
   fill: currentColor;
   margin-left: 0.5rem;
   transition: all 0.3s;
+}
+.plan-cards .plan-card a:hover {
+  background-color: #fff;
+  color: #ca0000;
 }
 .plan-cards .plan-card a:hover svg {
   margin-left: 1rem;
@@ -299,6 +316,140 @@ nav .links a:hover {
 .black-image {
   background-image: url(/images/black-image.jpg?9790bb6cd3b649dd8cccb130b8ffb0a7);
   background-size: cover;
-  height: 20rem;
+  height: 10rem;
   width: 100%;
+}
+
+.comments {
+  display: flex;
+  background-image: url(/images/bg_testimon.jpg?d46617b840d4bf0c7a55a53320b9ea88);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 12rem;
+  margin: 4rem 0;
+}
+.comments #comments {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 10rem);
+}
+.comments #comments .comment-text {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+.comments .comments-card {
+  background-color: #fff;
+  width: 50rem;
+  position: relative;
+  padding: 3rem;
+  height: 36rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.comments .comments-card h2 {
+  font-size: 4.7rem;
+  font-weight: 400;
+}
+.comments .comments-card h2 ~ p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.map {
+  position: relative;
+}
+.map .user-card {
+  pointer-events: none;
+  position: absolute;
+  top: 8rem;
+  left: 8rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  padding-right: 2rem;
+  border-radius: 0.5rem;
+  width: 664px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.map .user-card img {
+  border-radius: 0.5rem 0 0 0.5rem;
+  margin-right: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.map .user-card div {
+  margin: 1rem 0;
+}
+.map .user-card div.location {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.map .form {
+  pointer-events: none;
+  position: absolute;
+  top: 8rem;
+  left: calc(8rem + 664px + 4rem);
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  width: calc(100% - (8rem + 664px + 4rem) - 8rem);
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+}
+.map .form .form-title {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.map .form .form-desc {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+.map .form .first-line input {
+  width: calc(33.3333333333% - 1rem);
+  margin-right: 0.5rem;
+}
+.map .form .first-line input:last-child {
+  margin-right: 0;
+}
+.map .form input {
+  pointer-events: initial;
+  background-color: initial;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.map .form textarea {
+  pointer-events: initial;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  width: calc(100% - 1.5rem);
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-height: 2.75rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  outline: none;
+  resize: vertical;
+}
+.map .form button {
+  pointer-events: initial;
+  height: 2.75rem;
+  background-color: #ca0000;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  color: #fff;
 }

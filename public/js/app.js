@@ -2071,8 +2071,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import
 
  // init Swiper:
 
-var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper', {
+var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('#header-slide', {
   // Optional parameters
+  slidesPerView: 1,
+  spaceBetween: 0,
   direction: 'horizontal',
   loop: true,
   grabCursor: true,
@@ -2091,6 +2093,37 @@ var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper'
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
+  }
+});
+var swiperComments = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]("#comments", {
+  // Optional parameters
+  slidesPerView: 1,
+  spaceBetween: 0,
+  direction: 'horizontal',
+  loop: true,
+  grabCursor: true,
+  lazy: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
   }
 });
 
