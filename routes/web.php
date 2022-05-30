@@ -14,4 +14,4 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'view']);
+Route::get('/', [HomeController::class, 'view'])->name('page.home');

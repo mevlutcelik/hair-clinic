@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+img {
+  height: 100%;
+}
+
+.swiper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+.swiper span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #ca0000;
+}
+.swiper .swiper-button-next, .swiper .swiper-button-prev {
+  background-color: #ca0000;
+  color: #fff;
+  padding: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  transition: all 0.3s;
+}
+.swiper .swiper-button-next:hover, .swiper .swiper-button-prev:hover {
+  background-color: #fff;
+  color: #ca0000;
+}
+.swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.swiper .swiper-card {
+  position: absolute;
+  top: calc(50% - 15rem);
+  left: 12rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 2rem 4rem;
+  width: 40rem;
+  height: 30rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 0.3s;
+}
+.swiper .swiper-card:hover {
+  transform: scale(1.05);
+}
+.swiper .swiper-card:active {
+  transform: scale(0.95);
+}
+.swiper .swiper-card h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.swiper .swiper-card h1 span {
+  color: #ca0000;
+}
+.swiper .swiper-card h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.swiper .swiper-card p {
+  font-size: 1.55rem;
+}
+
+.whatsapp {
+  position: fixed;
+  z-index: 2;
+  bottom: 2rem;
+  right: 4rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #008000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  transition: all 0.3s;
+}
+.whatsapp svg {
+  height: 2rem;
+  width: 2rem;
+  fill: currentColor;
+}
+.whatsapp:hover {
+  background-color: #fff;
+  color: #008000;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 2rem 4rem;
+  width: calc(100% - 8rem);
+  pointer-events: none;
+}
+nav .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  pointer-events: initial;
+}
+nav .logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+nav .links {
+  display: flex;
+  align-items: center;
+}
+nav .links .location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+nav .links .location svg {
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+nav .links a {
+  pointer-events: initial;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #ca0000;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  margin-right: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+nav .links a svg {
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+nav .links a.cta {
+  background-color: #008000;
+  color: #fff;
+  font-weight: 600;
+}
+nav .links a.cta:hover {
+  background-color: #fff;
+  color: #008000;
+}
+nav .links a:last-child {
+  margin-right: 0;
+}
+nav .links a:hover {
+  background-color: #ca0000;
+  color: #fff;
+}
