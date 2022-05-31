@@ -7,6 +7,5 @@
     @include('components.black-image')
     @include('components.comments')
     @include('components.map')
-    @include('components.partners')
     @include('components.footer')
 @endsection
