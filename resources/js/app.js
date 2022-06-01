@@ -179,6 +179,8 @@ function controlePost(formEl, enter = false) {
     }
     if (errFormEl === 0) {
         $('button[type="submit"]').removeAttr('disabled');
+    }else{
+        $('button[type="submit"]').attr('disabled', 'disabled');
     }
 }
 
@@ -224,8 +226,9 @@ $('form').submit(function (e) {
             </div>`);
         },
         complete: function () {
-            button.removeAttr('disabled');
+            // button.removeAttr('disabled');
             button.html(`Submit Your Request`);
+            $('form')[0].reset();
         },
         success: function (data) {
             data.response === 'success' ? Swal.fire({

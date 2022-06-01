@@ -325,6 +325,25 @@ img {
   color: #008000;
 }
 
+nav .location,
+.side-nav .location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+nav .location span,
+.side-nav .location span {
+  font-family: "Poppins", system-ui, sans-serif;
+}
+nav .location svg,
+.side-nav .location svg {
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
 nav {
   position: absolute;
   top: 0;
@@ -360,21 +379,6 @@ nav .logo img {
 nav .links {
   display: flex;
   align-items: center;
-}
-nav .links .location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 3rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-nav .links .location span {
-  font-family: "Poppins", system-ui, sans-serif;
-}
-nav .links .location svg {
-  height: 1.5rem;
-  margin-right: 1rem;
 }
 nav .links a {
   pointer-events: initial;
@@ -510,6 +514,39 @@ nav .links a:hover {
 }
 .plan-cards .plan-card:last-child {
   margin-right: 0;
+}
+
+.collapse {
+  padding: 0 1.5rem;
+}
+.collapse a:first-child {
+  border-top: 0;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.dropdown:hover .dropdown-content {
+  display: flex !important;
+}
+.dropdown .dropdown-content {
+  pointer-events: initial;
+  position: absolute;
+  top: 2.5rem;
+  width: calc(100% - 1rem);
+  display: none;
+  flex-direction: column;
+}
+.dropdown .dropdown-content a {
+  display: flex;
+  width: 100%;
+  margin: 0.25rem;
+  pointer-events: initial;
+}
+.dropdown .dropdown-content a:first-child {
+  margin-top: 0.5rem;
 }
 
 .black-image {

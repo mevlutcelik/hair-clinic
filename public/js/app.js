@@ -2241,6 +2241,8 @@ function controlePost(formEl) {
 
   if (errFormEl === 0) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('button[type="submit"]').removeAttr('disabled');
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('button[type="submit"]').attr('disabled', 'disabled');
   }
 }
 
@@ -2275,8 +2277,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('form').submit(function (e) {
       button.html("\n            <div class=\"spinner-border\" role=\"status\">\n            <span class=\"visually-hidden\">Loading...</span>\n            </div>");
     },
     complete: function complete() {
-      button.removeAttr('disabled');
+      // button.removeAttr('disabled');
       button.html("Submit Your Request");
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('form')[0].reset();
     },
     success: function success(data) {
       data.response === 'success' ? sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({

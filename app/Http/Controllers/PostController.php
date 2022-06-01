@@ -20,7 +20,7 @@ class PostController extends Controller
             $to_name  = "Hair Forever";
             $subject  = "Appoinment - Hair Forever";
             $message->subject ($subject);
-            $message->from ($request->email, $request->name);
+            $message->from ($request->email, $to_name);
             $message->sender($request->email);
             $message->to ($to_email, $to_name);
         });

@@ -28,9 +28,9 @@
         <form action="{{ route('page.post') }}" autocomplete="off" autocapitalize="on">
             <div style="margin: 1rem 0;font-weight:600;" id="form-alert-message"></div>
             <div class="first-line">
-                <input type="text" id="name" placeholder="Name">
-                <input type="email" id="email" placeholder="Email">
-                <input type="phone" id="phone" placeholder="Phone">
+                <input type="text" id="name" autocapitalize="words" placeholder="Name">
+                <input type="email" id="email" inputmode="email" placeholder="Email">
+                <input type="tel" id="phone" pattern="[0-9]*" inputmode="tel" placeholder="Phone">
             </div>
             <textarea id="message" placeholder="Message"></textarea>
             <button type="submit">Submit Your Request</button>
