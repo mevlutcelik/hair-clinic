@@ -124,6 +124,9 @@ header{
         border-color: transparent;
         overflow: hidden;
         transition: all $transition-time;
+        li{
+            margin-left: 1rem;
+        }
         &.collapse-active{
             border-color: rgba(0, 0, 0, 0.1);
             border-top-color: transparent;
@@ -666,7 +669,7 @@ nav {
     }
 }
 
-.collapse {
+.collapse-slide {
     padding: 0 1.5rem;
 
     a {

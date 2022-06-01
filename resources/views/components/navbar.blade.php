@@ -22,8 +22,8 @@ $phone = "+90" . $phone;
     <div class="side-link-title first">Pages</div>
     <div class="side-links">
         <a title="Home" {{ Route::is('page.home') ? 'class=active' : null }} href="{{ route('page.home') }}">Home</a>
-        <a title="Treatments" href="#!" class="collapse">Treatments</a>
-        <div class="collapse">
+        <a title="Treatments" href="#!" class="collapse-slide">Treatments</a>
+        <div class="collapse-slide">
             <a title="Link 1" href="#!">Link 1</a>
             <a title="Link 2" href="#!">Link 2</a>
             <a title="Link 3" href="#!">Link 3</a>
