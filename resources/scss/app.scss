@@ -80,7 +80,7 @@ img {
     height: 100%;
 }
 
-header{
+header {
     background-image: url('../images/bg_testimon.jpg');
     background-position: center;
     background-size: cover;
@@ -88,7 +88,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    .header-card{
+
+    .header-card {
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(0.5rem);
         padding: 2rem;
@@ -97,17 +98,18 @@ header{
     }
 }
 
-.faq-row{
-    padding: 4rem;
+.faq-row, .before-after-row {
+    padding: 4rem 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.collapse{
+.collapse {
     margin: 0 0 1rem;
     transition: all $transition-time;
-    .collapse-header{
+
+    .collapse-header {
         border: 1px solid rgba(0, 0, 0, 0.1);
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.1);
@@ -116,7 +118,8 @@ header{
         font-size: 1rem;
         font-weight: 500;
     }
-    .collapse-text{
+
+    .collapse-text {
         border: 1px solid rgba(0, 0, 0, 0.1);
         border-top-color: transparent;
         height: 0;
@@ -124,10 +127,12 @@ header{
         border-color: transparent;
         overflow: hidden;
         transition: all $transition-time;
-        li{
+
+        li {
             margin-left: 1rem;
         }
-        &.collapse-active{
+
+        &.collapse-active {
             border-color: rgba(0, 0, 0, 0.1);
             border-top-color: transparent;
             padding: 1rem 1.5rem;
@@ -415,16 +420,17 @@ header{
 }
 
 
-.swal2-styled.swal2-confirm{
-    background-color: $color-green-dark !important;
+.swal2-styled.swal2-confirm {
+    background-color: $color-green-dark  !important;
 }
 
-.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation{
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
     background-color: rgba(0, 0, 0, 0.7) !important;
     backdrop-filter: blur(0.5rem);
 }
 
-body.swal2-no-backdrop .swal2-container{
+body.swal2-no-backdrop .swal2-container {
     overflow: hidden;
 }
 
@@ -531,6 +537,11 @@ nav {
             font-weight: 500;
             transition: all $transition-time;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+            &.active{
+                background-color: $color-primary-dark;
+                color: #fff;
+            }
 
             svg {
                 height: 1rem;
@@ -669,6 +680,20 @@ nav {
     }
 }
 
+.image-card{
+    width: calc((100% / 3) - 3rem);
+    height: 17vw;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    img{
+        width: 100%;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+}
+
 .collapse-slide {
     padding: 0 1.5rem;
 
@@ -694,7 +719,8 @@ nav {
         pointer-events: initial;
         position: absolute;
         top: 2.5rem;
-        width: calc(100% - 1rem);
+        left: -3rem;
+        width: calc(100% - 2rem);
         display: none;
         flex-direction: column;
 
@@ -704,7 +730,7 @@ nav {
             }
 
             display: flex;
-            width: 100%;
+            width: calc(100% + 6rem);
             margin: 0.25rem;
             pointer-events: initial;
         }

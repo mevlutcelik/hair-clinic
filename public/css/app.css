@@ -92,8 +92,8 @@ header .header-card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-.faq-row {
-  padding: 4rem;
+.faq-row, .before-after-row {
+  padding: 4rem 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -389,7 +389,8 @@ header .header-card {
   background-color: #008000 !important;
 }
 
-.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
   background-color: rgba(0, 0, 0, 0.7) !important;
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
@@ -499,6 +500,10 @@ nav .links a {
   font-weight: 500;
   transition: all 0.3s;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+nav .links a.active {
+  background-color: #ca0000;
+  color: #fff;
 }
 nav .links a svg {
   height: 1rem;
@@ -617,6 +622,21 @@ nav .links a:hover {
   margin-right: 0;
 }
 
+.image-card {
+  width: calc(33.3333333333% - 3rem);
+  height: 17vw;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.image-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
 .collapse-slide {
   padding: 0 1.5rem;
 }
@@ -636,13 +656,14 @@ nav .links a:hover {
   pointer-events: initial;
   position: absolute;
   top: 2.5rem;
-  width: calc(100% - 1rem);
+  left: -3rem;
+  width: calc(100% - 2rem);
   display: none;
   flex-direction: column;
 }
 .dropdown .dropdown-content a {
   display: flex;
-  width: 100%;
+  width: calc(100% + 6rem);
   margin: 0.25rem;
   pointer-events: initial;
 }
@@ -1079,6 +1100,20 @@ footer .footer-text {
     padding: 4rem 1rem;
   }
 
+  .before-after-row {
+    padding: 4rem 2rem;
+  }
+  .before-after-row .before-after-col {
+    flex-direction: row;
+  }
+  .before-after-row .before-after-col .image-card {
+    width: calc(50% - 3rem);
+    height: 17vw;
+  }
+  .before-after-row .before-after-col .image-card img {
+    width: 100%;
+  }
+
   #header-slide .swiper-card {
     height: 26rem;
     top: calc(50% - 13rem - 2rem);
@@ -1160,6 +1195,20 @@ footer .footer-text {
   }
 }
 @media all and (max-width: 568px) {
+  .before-after-row {
+    padding: 4rem 2rem;
+  }
+  .before-after-row .before-after-col {
+    flex-direction: column;
+  }
+  .before-after-row .before-after-col .image-card {
+    width: 100%;
+    height: 100%;
+  }
+  .before-after-row .before-after-col .image-card img {
+    width: 100%;
+  }
+
   .swiper .swiper-button-next, .swiper .swiper-button-prev {
     width: 2.5rem;
     height: 2.5rem;

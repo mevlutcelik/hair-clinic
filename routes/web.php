@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BeforeAfterController;
 use App\Http\Controllers\PostController;
 
 /*
@@ -16,7 +17,10 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [HomeController::class, 'view'])->name('page.home');
-Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
+Route::group(['prefix' => '{locale?}', 'middleware' => 'localize'], function(){
+    Route::get('/', [HomeController::class, 'view'])->name('page.home');
+    Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
+    Route::get('/before-after', [BeforeAfterController::class, 'view'])->name('page.before-after');
+});
 
 Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');

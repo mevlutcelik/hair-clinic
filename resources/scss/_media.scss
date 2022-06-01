@@ -124,6 +124,19 @@
     .faq-row{
         padding: 4rem 1rem;
     }
+    .before-after-row{
+        padding: 4rem 2rem;
+        .before-after-col{
+            flex-direction: row;
+            .image-card{
+                width: calc((100% / 2) - 3rem);
+                height: 17vw;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
     #header-slide{
         .swiper-card{
             height: 26rem;
@@ -209,6 +222,19 @@
     }
 }
 @media all and (max-width: 568px){
+    .before-after-row{
+        padding: 4rem 2rem;
+        .before-after-col{
+            flex-direction: column;
+            .image-card{
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
     .swiper .swiper-button-next, .swiper .swiper-button-prev{
         width: 2.5rem;
         height: 2.5rem;

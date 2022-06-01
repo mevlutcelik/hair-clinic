@@ -1,5 +1,5 @@
 <div class="faq-row">
-    <h2 style="padding: 1.5rem 1.5rem 2rem;">Frequently Asked Questions (FAQ)</h2>
+    <h2 style="padding: 1.5rem 0 2rem;">Frequently Asked Questions (FAQ)</h2>
     <div class="collapse">
         <div class="collapse-header">What is hair transplant?</div>
         <div class="collapse-text">

@@ -42,6 +42,7 @@ const swiper = new Swiper('#header-slide', {
     },
 });
 
+
 const swiperComments = new Swiper("#comments", {
     // Optional parameters
     slidesPerView: 1,
