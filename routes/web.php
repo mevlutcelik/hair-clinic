@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
 
 /*
@@ -16,5 +17,6 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [HomeController::class, 'view'])->name('page.home');
+Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
 
-Route::post('/post-request', [PostController::class, 'view'])->name('page.post');
+Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');

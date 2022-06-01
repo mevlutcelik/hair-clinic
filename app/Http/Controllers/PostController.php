@@ -8,7 +8,7 @@ use Mail;
 
 class PostController extends Controller
 {
-    public function view(Request $request){
+    public function sendMail(Request $request){
         $data = [
             'name'=>$request->name,
             'email'=>$request->email,
@@ -16,7 +16,7 @@ class PostController extends Controller
             'messagetext'=>$request->message
         ];
         Mail::send('email.request', $data, function ($message) use ($request){
-            $to_email = "info@mevlutcelik.com";
+            $to_email = "info@hemengeliriz.com";
             $to_name  = "Hair Forever";
             $subject  = "Appoinment - Hair Forever";
             $message->subject ($subject);

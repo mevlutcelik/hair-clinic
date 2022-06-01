@@ -39,7 +39,12 @@
         display: inline-flex;
     }
     .whatsapp{
-        bottom: 7rem;
+        bottom: 5rem;
+        right: 1rem;
+    }
+    .contact-message-button{
+        bottom: 10rem;
+        right: 1rem;
     }
     .links{
         display: none !important;
@@ -110,10 +115,19 @@
     }
 }
 @media all and (max-width: 768px){
+    header{
+        height: 20rem;
+        .header-card{   
+            font-size: 0.875rem;
+        }
+    }
+    .faq-row{
+        padding: 4rem 1rem;
+    }
     #header-slide{
         .swiper-card{
-            height: 18rem;
-            top: calc(50% - 9rem);
+            height: 26rem;
+            top: calc(50% - (26rem / 2) - 2rem);
         }
         h1{
             font-size: 3rem;
@@ -244,7 +258,7 @@
     }
     .map{
         .user-card{
-            height: 6rem;
+            height: 7rem;
             font-size: 0.625rem;
             padding-right: 0;
             .location{

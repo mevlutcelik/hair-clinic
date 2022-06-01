@@ -125,6 +125,12 @@ overlay.addEventListener('click', function () {
     }
 });
 
+$('.collapse').click(function (e) {
+    if (e.target.getAttribute('class') === 'collapse-header') {
+        e.target.nextElementSibling.classList.toggle('collapse-active');
+    }
+});
+
 const validateEmail = email => {
     return email.match(
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -179,7 +185,7 @@ function controlePost(formEl, enter = false) {
     }
     if (errFormEl === 0) {
         $('button[type="submit"]').removeAttr('disabled');
-    }else{
+    } else {
         $('button[type="submit"]').attr('disabled', 'disabled');
     }
 }
@@ -226,7 +232,6 @@ $('form').submit(function (e) {
             </div>`);
         },
         complete: function () {
-            // button.removeAttr('disabled');
             button.html(`Submit Your Request`);
             $('form')[0].reset();
         },
@@ -252,4 +257,114 @@ $('form').submit(function (e) {
             });
         },
     });
+});
+
+
+$('.contact-message-button').click(function (e) {
+    (async () => {
+
+        const { value: inputName } = await Swal.fire({
+            title: 'Name',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'words',
+            },
+            inputPlaceholder: 'Name',
+            confirmButtonText: 'Continue',
+            showCancelButton: true,
+            inputValidator: (value) => {
+                if (!value.trim()) {
+                    return 'Please enter your name!'
+                }
+            }
+        });
+        if (inputName) {
+            const { value: inputEmail } = await Swal.fire({
+                title: 'Email',
+                input: 'email',
+                inputPlaceholder: 'Email',
+                confirmButtonText: 'Continue',
+                showCancelButton: true,
+            });
+            if (inputName && inputEmail) {
+                const { value: inputPhone } = await Swal.fire({
+                    title: 'Phone',
+                    input: 'tel',
+                    inputPlaceholder: 'Phone',
+                    confirmButtonText: 'Continue',
+                    showCancelButton: true,
+                    inputValidator: (value) => {
+                        if (!value.trim()) {
+                            return 'Please enter phone number!'
+                        } else if (!validateNum(value.trim())) {
+                            return 'Please enter a valid phone number!'
+                        }
+                    }
+                });
+                if (inputName && inputEmail && inputPhone) {
+                    const { value: inputMessage } = await Swal.fire({
+                        title: 'Message',
+                        input: 'text',
+                        inputPlaceholder: 'Message',
+                        confirmButtonText: 'Submit Your Request',
+                        showCancelButton: true,
+                    });
+                    if (inputName && inputEmail && inputPhone && inputMessage) {
+                        let data = {
+                            name: inputName,
+                            email: inputEmail,
+                            phone: inputPhone,
+                            message: inputMessage,
+                        };
+                        $.ajax({
+                            type: 'post',
+                            url: $('form').attr('action'),
+                            data: data,
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            dataType: 'json',
+                            beforeSend: function () {
+                                Swal.fire({
+                                    html: `<div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                    </div>`,
+                                    showCloseButton: false,
+                                    showCancelButton: false,
+                                    showConfirmButton: false,
+                                    focusConfirm: true,
+                                    backdrop: false,
+                                });
+                                $('body').css('overflow', 'hidden');
+                            },
+                            complete: function () {
+                                $('body').css('overflow-y', 'auto');
+                            },
+                            success: function (data) {
+                                data.response === 'success' ? Swal.fire({
+                                    title: 'Success!',
+                                    text: 'Your appointment application has been sent successfully.',
+                                    icon: 'success',
+                                    confirmButtonText: 'Close'
+                                }) : Swal.fire({
+                                    title: 'Ooops!',
+                                    text: 'There is a problem. Please try again!',
+                                    icon: 'error',
+                                    confirmButtonText: 'Close'
+                                });
+                            },
+                            error: function (err) {
+                                Swal.fire({
+                                    title: 'Ooops!',
+                                    text: 'There is a problem. Please try again!',
+                                    icon: 'error',
+                                    confirmButtonText: 'Close'
+                                });
+                            },
+                        });
+                    }
+                }
+            }
+        }
+    })()
 });

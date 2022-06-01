@@ -122,7 +122,7 @@ return [
     'driver' => env('MAIL_DRIVER', 'smtp'),
     'host' => env('MAIL_HOST', 'smtp.mailgun.com'),
     'port' => env('MAIL_PORT',587),
-    'from' => ['address' => 'akorkmaz0111@gmail.com', 'name' => 'SitenizinAdı'],
+    'from' => ['address' => 'akorkmaz0111@gmail.com', 'name' => 'Hair Forever Clinic'],
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
     'username' => env('MAIL_USERNAME'),
     'password' => env('MAIL_PASSWORD'),

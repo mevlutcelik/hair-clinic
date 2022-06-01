@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap);
 @-webkit-keyframes spinner-border {
   to {
     transform: rotate(360deg);
@@ -37,7 +36,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", system-ui, sans-serif;
+  font-family: "Poppins", system-ui, sans-serif;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
@@ -73,6 +72,64 @@ textarea {
 
 img {
   height: 100%;
+}
+
+header {
+  background-image: url(/images/bg_testimon.jpg?d46617b840d4bf0c7a55a53320b9ea88);
+  background-position: center;
+  background-size: cover;
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.faq-row {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.collapse {
+  margin: 0 0 1rem;
+  transition: all 0.3s;
+}
+.collapse .collapse-header {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.collapse .collapse-text {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top-color: transparent;
+  height: 0;
+  padding: 0 1.5rem;
+  border-color: transparent;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.collapse .collapse-text.collapse-active {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: transparent;
+  padding: 1rem 1.5rem;
+  overflow: initial;
+  height: initial;
 }
 
 .swiper {
@@ -280,7 +337,7 @@ img {
   bottom: 1rem;
   left: 1rem;
   width: calc(100% - 2rem);
-  height: 4rem;
+  height: 3rem;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   z-index: 2;
@@ -321,6 +378,47 @@ img {
   fill: currentColor;
 }
 .whatsapp:hover {
+  background-color: #fff;
+  color: #008000;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #008000 !important;
+}
+
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+}
+
+body.swal2-no-backdrop .swal2-container {
+  overflow: hidden;
+}
+
+.contact-message-button {
+  position: fixed;
+  z-index: 2;
+  bottom: 7rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #008000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.contact-message-button svg {
+  height: 2rem;
+  width: 2rem;
+  fill: currentColor;
+}
+.contact-message-button:hover {
   background-color: #fff;
   color: #008000;
 }
@@ -440,7 +538,7 @@ nav .links a:hover {
   background-color: #fff;
   width: calc(33.3333333333% - 2rem - 4rem);
   margin-right: 2rem;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -892,7 +990,13 @@ footer .footer-text {
   }
 
   .whatsapp {
-    bottom: 7rem;
+    bottom: 5rem;
+    right: 1rem;
+  }
+
+  .contact-message-button {
+    bottom: 10rem;
+    right: 1rem;
   }
 
   .links {
@@ -961,9 +1065,20 @@ footer .footer-text {
   }
 }
 @media all and (max-width: 768px) {
+  header {
+    height: 20rem;
+  }
+  header .header-card {
+    font-size: 0.875rem;
+  }
+
+  .faq-row {
+    padding: 4rem 1rem;
+  }
+
   #header-slide .swiper-card {
-    height: 18rem;
-    top: calc(50% - 9rem);
+    height: 26rem;
+    top: calc(50% - 13rem - 2rem);
   }
   #header-slide h1 {
     font-size: 3rem;
@@ -1086,7 +1201,7 @@ footer .footer-text {
   }
 
   .map .user-card {
-    height: 6rem;
+    height: 7rem;
     font-size: 0.625rem;
     padding-right: 0;
   }
