@@ -12,7 +12,7 @@ class PostController extends Controller
         $data = [
             'name'=>$request->name,
             'email'=>$request->email,
-            'phone'=>$request->phone, 
+            'phone'=>$request->phone,
             'messagetext'=>$request->message
         ];
         Mail::send('email.request', $data, function ($message) use ($request){
