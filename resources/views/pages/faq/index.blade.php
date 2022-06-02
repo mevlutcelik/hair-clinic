@@ -6,7 +6,7 @@
     @include('components.navbar')
     <header>
         <div class="header-card">
-            <h1>FAQ - Hair Forever</h1>
+            <h1>{{ __('faq.faq-long-name') }}</h1>
         </div>
     </header>
     @include('components.faq')

@@ -1,6 +1,6 @@
 @php
-$phone = '5307628300';
-$formattedPhone = '0 (' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . ' ' . substr($phone, 6, 2) . ' ' . substr($phone, 8, 2);
+$phone = config('hfc.phone');
+$formattedPhone = '+90 (' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) . ' ' . substr($phone, 6, 2) . ' ' . substr($phone, 8, 2);
 $wpPhone = '90' . $phone;
 $phone = '+90' . $phone;
 @endphp
@@ -17,12 +17,12 @@ $phone = '+90' . $phone;
             <path
                 d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
         </svg>
-        <span>Istanbul, Turkey</span>
+        <span>{{ __('global.location') }}</span>
     </div>
-    <div class="side-link-title first">Pages</div>
+    <div class="side-link-title first">{{ __('global.pages') }}</div>
     <div class="side-links">
-        <a title="Home" {{ Route::is('page.home') ? 'class=active' : null }}
-            href="{{ route('page.home') }}">Home</a>
+        <a title="{{ __('global.home') }}" {{ Route::is('page.home') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.home')) }}">{{ __('global.home') }}</a>
         {{-- <a title="Treatments" href="#!" class="collapse-slide">Treatments</a>
         <div class="collapse-slide">
             <a title="Hair Transplant" href="#!">Hair Transplant</a>
@@ -33,8 +33,19 @@ $phone = '+90' . $phone;
             <a title="Sapphire Transplant" href="#!">Sapphire Transplant</a>
             <a title="For Womens" href="#!">For Womens</a>
         </div> --}}
-        <a title="Before - After" {{ Route::is('page.before-after') ? 'class=active' : null }} href="{{ route('page.before-after') }}">Before - After</a>
-        <a title="FAQ" {{ Route::is('page.faq') ? 'class=active' : null }} href="{{ route('page.faq') }}">FAQ</a>
+        <a title="{{ __('global.before-after') }}" {{ Route::is('page.before-after') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.before-after')) }}">{{ __('global.before-after') }}</a>
+        <a title="{{ __('global.faq') }}" {{ Route::is('page.faq') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.faq')) }}">{{ __('global.faq') }}</a>
+        <a title="Treatments" href="#!" class="collapse-slide">{{ __('global.select-language') }}</a>
+        <div class="collapse-slide">
+            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <a rel="alternate" hreflang="{{ $localeCode }}"
+                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    {{ $properties['native'] }}
+                </a>
+            @endforeach
+        </div>
     </div>
 </div>
 <a title="Whatsapp" href="https://wa.me/{{ $wpPhone }}" class="whatsapp">
@@ -43,7 +54,7 @@ $phone = '+90' . $phone;
             d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
     </svg>
 </a>
-<a title="Appointment" class="contact-message-button">
+<a title="{{ __('map.appointment') }}" class="contact-message-button">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
         viewBox="0 0 16 16">
         <path
@@ -60,7 +71,7 @@ $phone = '+90' . $phone;
 </a>
 <nav>
     <div>
-        <a href="{{ route('page.home') }}" class="logo">
+        <a href="{{ LaravelLocalization::localizeUrl(route('page.home')) }}" class="logo">
             <img src="https://hairforeverclinic.com/wp-content/uploads/2018/03/Hair-3.png" alt="Hair Forever Clinic">
         </a>
     </div>
@@ -77,10 +88,10 @@ $phone = '+90' . $phone;
                 <path
                     d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
             </svg>
-            <span>Istanbul, Turkey</span>
+            <span>{{ __('global.location') }}</span>
         </div>
-        <a title="Home" {{ Route::is('page.home') ? 'class=active' : null }}
-        href="{{ route('page.home') }}">Home</a>
+        <a title="{{ __('global.home') }}" {{ Route::is('page.home') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.home')) }}">{{ __('global.home') }}</a>
         {{-- <div class="dropdown">
             <a href="#!" class="dropdown-show">
                 <span>Treatments</span>
@@ -100,16 +111,34 @@ $phone = '+90' . $phone;
                 <a title="For Womens" href="#!">For Womens</a>
             </div>
         </div> --}}
-        <a title="Before-After" {{ Route::is('page.before-after') ? 'class=active' : null }}
-        href="{{ route('page.before-after') }}">Before - After</a>
-        <a title="FAQ" {{ Route::is('page.faq') ? 'class=active' : null }}
-        href="{{ route('page.faq') }}">FAQ</a>
+        <a title="{{ __('global.before-after') }}" {{ Route::is('page.before-after') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.before-after')) }}">{{ __('global.before-after') }}</a>
+        <a title="{{ __('global.faq') }}" {{ Route::is('page.faq') ? 'class=active' : null }}
+            href="{{ LaravelLocalization::localizeUrl(route('page.faq')) }}">{{ __('global.faq') }}</a>
+        <div class="dropdown">
+            <a href="#!" class="dropdown-show">
+                <span>{{ __('global.select-language') }}</span>
+                <svg style="margin-left: 0.5rem;height:0.75rem;width:0.75rem;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512">
+                    <path
+                        d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
+                </svg>
+            </a>
+            <div class="dropdown-content">
+                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <a rel="alternate" hreflang="{{ $localeCode }}"
+                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        {{ $properties['native'] }}
+                    </a>
+                @endforeach
+            </div>
+        </div>
         <a href="tel:{{ $phone }}" class="cta">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
                     d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
             </svg>
-            <span>+90 (530) 762 83 00</span>
+            <span>{{ $formattedPhone }}</span>
         </a>
     </div>
 </nav>

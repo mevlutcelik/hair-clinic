@@ -9,15 +9,13 @@
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <div class="card-title">Working Hours</div>
-            <div class="card-desc"><strong>Mon - Fri:</strong> 8.00 am - 6.00 pm<strong><br>Saturday:</strong> 10.00
-                am
-                - 3.00 pm<strong><br>Sunday:</strong> Closed</div>
+            <div class="card-title">{{ __('global.working-hours') }}</div>
+            <div class="card-desc"><strong>{{ __('global.working-hours-mon-fri') }}</strong> {{ __('global.working-hours-time-8-6') }}<strong><br>{{ __('global.working-hours-saturday') }}</strong> {{ __('global.working-hours-time-10-3') }}<strong><br>{{ __('global.working-hours-sunday') }}:</strong> {{ __('global.working-hours-sunday-time') }}</div>
         </div>
     </div>
     <div class="footer-text">Hair Forever &copy;
         <script type="text/javascript">
             document.write(new Date().getFullYear());
-        </script> - Tüm Hakları Saklıdır
+        </script> - {{ __('global.footer-text') }}
     </div>
 </footer>

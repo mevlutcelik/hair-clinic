@@ -8,13 +8,11 @@
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">
                 <div>
-                    <h1><span>Hair</span>Forever</h1>
-                    <h2>Clinic for you beauty</h2>
+                    <h1>{!! __('header-slide.swiper-card-title') !!}</h1>
+                    <h2>{!! __('header-slide.swiper-card-desc') !!}</h2>
                 </div>
                 <div>
-                    <p>Hair Forever Clinic is a Europan award winner clinic with more than <strong>15 years</strong> of
-                        experience. We provide <strong>hight-quality</strong> services with more the most experienced
-                        team.</p>
+                    <p>{!! __('header-slide.swiper-card-1-text') !!}</p>
                 </div>
             </div>
         </div>
@@ -23,11 +21,11 @@
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">
                 <div>
-                    <h1><span>Hair</span>Forever</h1>
-                    <h2>Clinic for you beauty</h2>
+                    <h1>{!! __('header-slide.swiper-card-title') !!}</h1>
+                    <h2>{!! __('header-slide.swiper-card-desc') !!}</h2>
                 </div>
                 <div>
-                    <p>Get your <strong>perfect hair transform</strong> with reasonable prices in one of the largest hospitals in Turkey. Get your <strong>FREE</strong> personal hair analysis by our medical experts.</p>
+                    <p>{!! __('header-slide.swiper-card-2-text') !!}</p>
                 </div>
             </div>
         </div>
@@ -37,11 +35,11 @@
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">
                 <div>
-                    <h1><span>Hair</span>Forever</h1>
-                    <h2>Clinic for you beauty</h2>
+                    <h1>{!! __('header-slide.swiper-card-title') !!}</h1>
+                    <h2>{!! __('header-slide.swiper-card-desc') !!}</h2>
                 </div>
                 <div>
-                    <p>Hair Forever, together with specialist doctors, professional staff and its innovative approach, offers the <strong>most comfortable</strong> service to its guests.</p>
+                    <p>{!! __('header-slide.swiper-card-3-text') !!}</p>
                 </div>
             </div>
         </div>

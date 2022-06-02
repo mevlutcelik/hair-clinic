@@ -455,7 +455,7 @@ nav {
   justify-content: space-between;
   background-color: transparent;
   padding: 2rem 4rem;
-  width: 100%;
+  width: 100vw;
   pointer-events: none;
   transition: all 0.3s;
 }
@@ -463,6 +463,7 @@ nav.scrolled {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  width: 100vw;
   background-color: #fff;
   padding: 1rem 4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -533,6 +534,7 @@ nav .links a:hover {
   align-items: center;
   justify-content: center;
   padding: 8rem 0;
+  width: 100vw;
 }
 .plan-cards .row {
   background-color: #fff;
@@ -612,6 +614,9 @@ nav .links a:hover {
   justify-content: center;
   font-size: 0.875rem;
   font-weight: 500;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .plan-cards .plan-card ul li svg {
   height: 1rem;
@@ -655,16 +660,20 @@ nav .links a:hover {
 .dropdown .dropdown-content {
   pointer-events: initial;
   position: absolute;
-  top: 2.5rem;
-  left: -3rem;
+  top: 2rem;
+  left: 0;
   width: calc(100% - 2rem);
   display: none;
   flex-direction: column;
+  pointer-events: initial;
 }
 .dropdown .dropdown-content a {
   display: flex;
-  width: calc(100% + 6rem);
-  margin: 0.25rem;
+  background-color: #fff;
+  -webkit-backdrop-filter: initial;
+          backdrop-filter: initial;
+  width: calc(100% + 1.5rem);
+  margin: 0;
   pointer-events: initial;
 }
 .dropdown .dropdown-content a:first-child {
@@ -686,6 +695,7 @@ nav .links a:hover {
   background-repeat: no-repeat;
   padding: 4rem 12rem;
   margin: 4rem 0;
+  width: 100vw;
 }
 .comments #comments {
   background-color: transparent;
@@ -746,6 +756,7 @@ nav .links a:hover {
 
 .map {
   position: relative;
+  width: 100vw;
 }
 .map .user-card {
   pointer-events: none;
@@ -916,6 +927,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 4rem;
+  width: 100vw;
 }
 footer .row {
   display: flex;

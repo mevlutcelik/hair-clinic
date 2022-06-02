@@ -17,8 +17,34 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [HomeController::class, 'view'])->name('page.home');
-    Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
-    Route::get('/before-after', [BeforeAfterController::class, 'view'])->name('page.before-after');
+// routes/web.php
 
-Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+], function()
+{
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+	Route::get('/', function()
+	{
+		return View::make('pages.home.index');
+	})->name('page.home');
+
+	Route::get(LaravelLocalization::transRoute('routes.faq'),function(){
+		return View::make('pages.faq.index');
+	})->name('page.faq');
+
+    Route::get(LaravelLocalization::transRoute('routes.before-after'),function(){
+		return View::make('pages.before-after.index');
+	})->name('page.before-after');
+
+    Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
+});
+
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+// Route::get('/', [HomeController::class, 'view'])->name('page.home');
+//     Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
+//     Route::get('/before-after', [BeforeAfterController::class, 'view'])->name('page.before-after');
+
+// Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
