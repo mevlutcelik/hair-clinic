@@ -1,112 +1,164 @@
-@media all and (max-width: 1500px){
-    .map{
-        .user-card{
+@media all and (max-width: 1500px) {
+    .map {
+        .user-card {
             top: 8rem;
             left: 6rem;
             height: 14rem;
             justify-content: flex-start;
         }
-        .form{
+
+        .form {
             top: 8rem;
             left: calc(6rem + 664px + 4rem);
-            .form-title{
+
+            .form-title {
                 font-size: 2rem;
             }
         }
     }
 }
-@media all and (max-width: 1400px){
-    .first-line{
+
+@media all and (max-width: 1400px) {
+    .first-line {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        input{
+
+        input {
             width: 100% !important;
         }
     }
-    textarea{
+
+    textarea {
         width: 100% !important;
     }
 }
-@media all and (max-width: 1280px){
-    .side-button{
+
+@media all and (max-width: 1280px) {
+    .side-button {
         display: inline-flex !important;
     }
-    nav{
+
+    nav {
         padding: 1rem !important;
     }
-    .mx-mobile-phone-button{
+
+    .mx-mobile-phone-button {
         display: inline-flex;
     }
-    .whatsapp{
-        bottom: 5rem;
-        right: 1rem;
+
+    .whatsapp {
+        border-radius: 0.5rem;
+        top: 2rem;
+        height: 3.5rem;
+        width: 3.5rem;
+        right: 9rem;
+        background: rgb(255, 255, 255, 0.5);
+        box-shadow: none;
+        backdrop-filter: blur(0.5rem);
+        color: #000;
+        z-index: 3;
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
-    .contact-message-button{
-        bottom: 10rem;
-        right: 1rem;
+
+    .contact-message-button {
+        border-radius: 0.5rem;
+        top: 2rem;
+        height: 3.5rem;
+        width: 3.5rem;
+        right: 5rem;
+        background: rgb(255, 255, 255, 0.5);
+        box-shadow: none;
+        backdrop-filter: blur(0.5rem);
+        color: #000;
+        z-index: 3;
+
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
-    .links{
+
+    .links {
         display: none !important;
     }
-    #header-slide{
-        .swiper-card{
+
+    #header-slide {
+        .swiper-card {
             left: 10vw;
             width: 80vw;
         }
     }
-    .plan-cards{
-        .row{
+
+    .plan-cards {
+        .row {
             flex-direction: column;
         }
-        .plan-card{
+
+        .plan-card {
             width: 100%;
             margin-right: 0;
             margin-bottom: 2rem;
         }
     }
-    .comments{
+
+    .comments {
         padding: 2rem;
-        #comments{
+
+        #comments {
             height: calc(100% - 5rem);
         }
-        .comments-card{
+
+        .comments-card {
             width: 90vw;
             height: 28rem;
-            h2{
+
+            h2 {
                 font-size: 2rem;
             }
-            h2~p{
+
+            h2~p {
                 font-size: 1.12rem;
             }
         }
     }
-    .map{
-        .user-card{
+
+    .map {
+        .user-card {
             top: 8rem;
             left: calc(50% - 45%);
             width: 90%;
             justify-content: flex-start;
             height: 14rem;
             font-size: 0.875rem;
-            .location{
+
+            .location {
                 font-size: 1rem !important;
             }
-            img{
+
+            img {
                 margin-right: 3rem;
             }
         }
-        .form{
+
+        .form {
             width: 90%;
             top: calc(8rem + 14rem + 2rem);
             left: calc(50% - 45%);
         }
     }
-    footer{
-        .row{
+
+    footer {
+        .row {
             flex-direction: column;
         }
-        .card{
+
+        .card {
             min-width: 60vw;
             width: 100%;
             margin-right: 0;
@@ -114,183 +166,244 @@
         }
     }
 }
-@media all and (max-width: 768px){
-    header{
+
+@media all and (max-width: 768px) {
+    header {
         height: 20rem;
-        .header-card{   
+
+        .header-card {
             font-size: 0.875rem;
         }
     }
-    .faq-row{
+
+    .faq-row {
         padding: 4rem 1rem;
     }
-    .before-after-row{
+
+    .before-after-row {
         padding: 4rem 2rem;
-        .before-after-col{
+
+        .before-after-col {
             flex-direction: row;
-            .image-card{
+
+            .image-card {
                 width: calc((100% / 2) - 3rem);
                 height: 17vw;
-                img{
+
+                img {
                     width: 100%;
                 }
             }
         }
     }
-    #header-slide{
-        .swiper-card{
+
+    #header-slide {
+        .swiper-card {
             height: 26rem;
             top: calc(50% - (26rem / 2) - 2rem);
         }
-        h1{
+
+        h1 {
             font-size: 3rem;
         }
-        h2{
+
+        h2 {
             font-size: 1.5rem;
         }
-        p{
+
+        p {
             font-size: 1rem;
         }
     }
-    .map{
-        iframe{
+
+    .map {
+        iframe {
             height: 16rem;
         }
-        .user-card{
+
+        .user-card {
             position: relative;
             top: 2rem !important;
         }
-        .form{
+
+        .form {
             position: relative;
             top: 5rem !important;
         }
     }
 }
-@media all and (max-width: 670px){
-    .logo{
+
+@media all and (max-width: 670px) {
+
+    .whatsapp,.contact-message-button{
+        top: 1rem;
+    }
+
+    .logo {
         height: 3rem !important;
     }
-    #header-slide{
+
+    #header-slide {
+
         // height: 60vh;
-        h1{
+        h1 {
             font-size: 2rem;
         }
-        h2{
+
+        h2 {
             font-size: 1.125rem;
         }
-        p{
+
+        p {
             font-size: 0.875rem;
         }
     }
-    .swiper .swiper-button-next, .swiper .swiper-button-prev{
+
+    .swiper .swiper-button-next,
+    .swiper .swiper-button-prev {
         width: 3rem;
         height: 3rem;
-        &:after{
+
+        &:after {
             font-size: 1rem;
         }
     }
-    .comments{
+
+    .comments {
         padding: 2rem;
-        #comments{
+
+        #comments {
             height: calc(100% - 6rem);
         }
-        .comments-card{
+
+        .comments-card {
             width: 90vw;
             height: 30rem;
-            h2{
+
+            h2 {
                 font-size: 2rem;
             }
-            h2~p{
+
+            h2~p {
                 font-size: 1.12rem;
             }
         }
     }
-    .map{
-        .user-card{
+
+    .map {
+        .user-card {
             height: 8rem;
             font-size: 0.75rem;
-            div{
+
+            div {
                 margin: 0.25rem 0;
             }
-            .location{
+
+            .location {
                 font-size: 0.875rem !important;
             }
         }
-        .form{
+
+        .form {
             top: calc(8rem + 8rem + 2rem);
         }
     }
 }
-@media all and (max-width: 568px){
-    .before-after-row{
+
+@media all and (max-width: 568px) {
+    .before-after-row {
         padding: 4rem 2rem;
-        .before-after-col{
+
+        .before-after-col {
             flex-direction: column;
-            .image-card{
+
+            .image-card {
                 width: 100%;
                 height: 100%;
-                img{
+
+                img {
                     width: 100%;
                 }
             }
         }
     }
-    .swiper .swiper-button-next, .swiper .swiper-button-prev{
+
+    .swiper .swiper-button-next,
+    .swiper .swiper-button-prev {
         width: 2.5rem;
         height: 2.5rem;
-        &:after{
+
+        &:after {
             font-size: 0.875rem;
         }
     }
-    .comments{
+
+    .comments {
         padding: 1rem;
-        #comments{
+
+        #comments {
             height: calc(100% - 4rem);
         }
-        .comments-card{
+
+        .comments-card {
             height: 23rem;
-            h2{
+
+            h2 {
                 font-size: 1.875rem;
             }
-            h2~p{
+
+            h2~p {
                 font-size: 1rem;
             }
-            .comment-text{
+
+            .comment-text {
                 font-size: 0.875rem !important;
             }
         }
     }
 }
-@media all and (max-width: 480px){
-    .comments{
-        .comments-card{
+
+@media all and (max-width: 480px) {
+    .comments {
+        .comments-card {
             height: 26rem;
         }
     }
 }
-@media all and (max-width: 448px){
-    .comments{
-        .comments-card{
+
+@media all and (max-width: 448px) {
+    .comments {
+        .comments-card {
             height: 28rem;
         }
     }
 }
-@media all and (max-width: 375px){
-    .comments{
-        .comments-card{
+
+@media all and (max-width: 375px) {
+    .swiper-card{
+        h1{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .comments {
+        .comments-card {
             width: 94vw;
             height: 30rem;
         }
     }
-    .map{
-        .user-card{
+
+    .map {
+        .user-card {
             height: 7rem;
             font-size: 0.625rem;
             padding-right: 0;
-            .location{
+
+            .location {
                 font-size: 0.75rem !important;
             }
-            img{
+
+            img {
                 margin-right: 1rem;
             }
         }

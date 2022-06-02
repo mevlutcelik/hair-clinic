@@ -1,10 +1,10 @@
 <!-- Slider main container -->
-<div class="swiper" id="header-slide">
+<div {!! config('app.locale') === 'ar' ? 'dir="rtl"' : null !!} class="swiper" id="header-slide">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img data-src="https://hairforeverclinic.com/wp-content/uploads/2022/04/hair-3.jpg" class="swiper-lazy" />
+            <img data-src="{{ asset('images/hair-3.jpg') }}" class="swiper-lazy" />
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">
                 <div>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="swiper-slide">
-            <img data-src="https://hairforeverclinic.com/wp-content/uploads/2022/04/hair-3.webp" class="swiper-lazy" />
+            <img data-src="{{ asset('images/hair-3.webp') }}" class="swiper-lazy" />
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">
                 <div>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="swiper-slide">
-            <img data-src="https://hairforeverclinic.com/wp-content/uploads/2022/04/hair-2.jpg"
+            <img data-src="{{ asset('images/hair-2.jpg') }}"
                 class="swiper-lazy" />
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             <div class="swiper-card">

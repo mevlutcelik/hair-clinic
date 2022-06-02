@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use NotificationChannels\Telegram\TelegramUpdates;
+
+use App\Models\Appointments;
+
+use App\Jobs\TelegramLog;
+
 use Illuminate\Http\Request;
 
-use Mail;
+// use Mail;
 
 class PostController extends Controller
 {
@@ -13,22 +19,16 @@ class PostController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
-            'messagetext'=>$request->message
+            'message'=>$request->message,
+            'language' => config('app.locale')
         ];
-        Mail::send('email.request', $data, function ($message) use ($request){
-            $to_email = "info@hemengeliriz.com";
-            $to_name  = "Hair Forever";
-            $subject  = "Appoinment - Hair Forever";
-            $message->subject ($subject);
-            $message->from ($request->email, $to_name);
-            $message->sender($request->email);
-            $message->to ($to_email, $to_name);
-        });
-        if(count(Mail::failures()) > 0){
-            $status = 'error';
-        } else {
-            $status = 'success';
-        }
-        return response()->json(['response' => $status]);
+        Appointments::create($data);
+        TelegramLog::dispatch('
+        *Ad* : '. $data["name"] .'
+*Email* : '. $data["email"] .'
+*Phone* : '. $data["phone"] .'
+*Message* : '. $data["message"].'
+*Language* : '. $data["language"]);
+        return response()->json(['response' => 'success']);
     }
 }

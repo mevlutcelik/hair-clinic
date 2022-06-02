@@ -4,10 +4,10 @@ $formattedPhone = '+90 (' . substr($phone, 0, 3) . ') ' . substr($phone, 3, 3) .
 @endphp
 <div class="map">
     <iframe frameborder="0"
-        src="https://maps.google.com/maps?t=m&output=embed&iwloc=near&z=15&q=H%C3%BCseyina%C4%9Fa%2C+Sahne+Sk.+34435+Beyo%C4%9Flu%2F%C4%B0stanbul"
+        src="https://maps.google.com/maps?t=m&output=embed&iwloc=near&z=15&q=H%C3%BCseyina%C4%9Fa%2C+Sahne+Sk.+34435+Beyo%C4%9Flu%2F%C4%B0stanbul&hl={{ config('app.locale') }}"
         width="100%" height="900"></iframe>
     <div class="user-card">
-        <img src="https://www.kahillogistic.com/images/marwah-e1650023155749.webp" alt="Marwah Kahil">
+        <img src="{{ asset('images/marwah-e1650023155749.webp') }}" alt="Marwah Kahil">
         <div>
             <div class="location">{{ __('map.location') }}</div>
             <div class="work-hours"><strong>{{ __('map.mon-fri') }}:</strong> {{ __('map.9-6') }}</div>

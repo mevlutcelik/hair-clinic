@@ -3,7 +3,7 @@
         <div class="comments-card">
             <h2>{{ __('comment.comment-title') }}</h2>
             <p>{{ __('comment.comment-desc') }}</p>
-            <div class="swiper" id="comments">
+            <div {!! config('app.locale') === 'ar' ? 'dir="rtl"' : null !!} class="swiper" id="comments">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="comment-header">

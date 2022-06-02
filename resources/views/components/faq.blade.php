@@ -14,7 +14,7 @@
     </div>
     <div class="collapse">
         <div class="collapse-header">{{ __('faq.faq-3-title') }}</div>
-        <div class="collapse-text">
+        <div class="collapse-text" {{ config('app.locale') === 'ar' ? 'dir=rtl' : null }}>
             <ul>
                 {!! __('faq.faq-3-text') !!}
             </ul>

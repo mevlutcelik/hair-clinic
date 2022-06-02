@@ -265,50 +265,60 @@ $('.contact-message-button').click(function (e) {
     (async () => {
 
         const { value: inputName } = await Swal.fire({
-            title: 'Name',
+            title: swAlertName,
             input: 'text',
             inputAttributes: {
                 autocapitalize: 'words',
             },
-            inputPlaceholder: 'Name',
-            confirmButtonText: 'Continue',
+            inputPlaceholder: swAlertName,
+            confirmButtonText: swAlertContinue,
             showCancelButton: true,
+            cancelButtonText: swAlertCancel,
             inputValidator: (value) => {
                 if (!value.trim()) {
-                    return 'Please enter your name!'
+                    return swAlertNameInvalid
                 }
             }
         });
         if (inputName) {
             const { value: inputEmail } = await Swal.fire({
-                title: 'Email',
+                title: swAlertEmail,
                 input: 'email',
-                inputPlaceholder: 'Email',
-                confirmButtonText: 'Continue',
+                inputPlaceholder: swAlertEmail,
+                confirmButtonText: swAlertContinue,
                 showCancelButton: true,
+                cancelButtonText: swAlertCancel,
+                validationMessage: swAlertEmailInvalid
             });
             if (inputName && inputEmail) {
                 const { value: inputPhone } = await Swal.fire({
-                    title: 'Phone',
+                    title: swAlertPhone,
                     input: 'tel',
-                    inputPlaceholder: 'Phone',
-                    confirmButtonText: 'Continue',
+                    inputPlaceholder: swAlertPhone,
+                    confirmButtonText: swAlertContinue,
                     showCancelButton: true,
+                    cancelButtonText: swAlertCancel,
                     inputValidator: (value) => {
                         if (!value.trim()) {
-                            return 'Please enter phone number!'
+                            return swAlertPhoneNullInvalid
                         } else if (!validateNum(value.trim())) {
-                            return 'Please enter a valid phone number!'
+                            return swAlertPhoneInvalid
                         }
                     }
                 });
                 if (inputName && inputEmail && inputPhone) {
                     const { value: inputMessage } = await Swal.fire({
-                        title: 'Message',
+                        title: swAlertMessage,
                         input: 'text',
-                        inputPlaceholder: 'Message',
-                        confirmButtonText: 'Submit Your Request',
+                        inputPlaceholder: swAlertMessage,
+                        confirmButtonText: swAlertSubmitText,
                         showCancelButton: true,
+                        cancelButtonText: swAlertCancel,
+                        inputValidator: (value) => {
+                            if (!value.trim()) {
+                                return swAlertMessageInvalid
+                            }
+                        }
                     });
                     if (inputName && inputEmail && inputPhone && inputMessage) {
                         let data = {
@@ -343,23 +353,23 @@ $('.contact-message-button').click(function (e) {
                             },
                             success: function (data) {
                                 data.response === 'success' ? Swal.fire({
-                                    title: 'Success!',
-                                    text: 'Your appointment application has been sent successfully.',
+                                    title: swAlertSuccTitle,
+                                    text: swAlertSuccMessage,
                                     icon: 'success',
-                                    confirmButtonText: 'Close'
+                                    confirmButtonText: swAlertClose
                                 }) : Swal.fire({
                                     title: 'Ooops!',
-                                    text: 'There is a problem. Please try again!',
+                                    text: swAlertErrMessage,
                                     icon: 'error',
-                                    confirmButtonText: 'Close'
+                                    confirmButtonText: swAlertClose
                                 });
                             },
                             error: function (err) {
                                 Swal.fire({
                                     title: 'Ooops!',
-                                    text: 'There is a problem. Please try again!',
+                                    text: swAlertErrMessage,
                                     icon: 'error',
-                                    confirmButtonText: 'Close'
+                                    confirmButtonText: swAlertClose
                                 });
                             },
                         });
