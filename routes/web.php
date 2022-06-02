@@ -41,10 +41,6 @@ Route::group([
     Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
 });
 
-/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
-
-// Route::get('/', [HomeController::class, 'view'])->name('page.home');
-//     Route::get('/faq', [FaqController::class, 'view'])->name('page.faq');
-//     Route::get('/before-after', [BeforeAfterController::class, 'view'])->name('page.before-after');
-
-// Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
+Route::get('/panel', function(){
+    return 'asdasasdsad';
+});
