@@ -38,7 +38,7 @@
                     </tr>
                 </thead>
                 <tbody>
-        @foreach($posts as $post)
+        @foreach($posts as $key => $post)
                     <tr>
                         <th scope="row">{{$post->id}}</th>
                         <td>{{$post->name}}</td>

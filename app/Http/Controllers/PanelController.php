@@ -27,7 +27,7 @@ class PanelController extends Controller
 
     public function dashboard(){
         if(Auth::check()){
-            $posts = Appointments::paginate(10);
+            $posts = Appointments::orderBy('id', 'DESC')->paginate(10);
             return view('pages.panel.dashboard', compact('posts'))->with([
                 'posts' => $posts
             ]);
