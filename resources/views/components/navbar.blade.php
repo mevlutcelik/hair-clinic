@@ -72,7 +72,7 @@ $phone = '+90' . $phone;
 <nav>
     <div>
         <a href="{{ LaravelLocalization::localizeUrl(route('page.home')) }}" class="logo">
-            <img src="https://hairforeverclinic.com/wp-content/uploads/2018/03/Hair-3.png" alt="Hair Forever Clinic">
+            <img src="{{asset('images/logo.png')}}" alt="Hair Forever Clinic">
         </a>
     </div>
     <button role="button" class="side-button">
