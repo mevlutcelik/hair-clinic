@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\FaqController;
-use App\Http\Controllers\BeforeAfterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PanelController;
 
@@ -42,5 +39,7 @@ Route::group([
     Route::post('/post-request', [PostController::class, 'sendMail'])->name('page.post');
 });
 
-Route::get('/panel', [PanelController::class, 'view'])->name('page.panel');
-Route::post('/panel', [PanelController::class, 'login'])->name('page.panel.login');
+Route::get('/login', [PanelController::class, 'view'])->name('page.login');
+Route::post('/login', [PanelController::class, 'login'])->name('page.login.post');
+Route::get('/dashboard', [PanelController::class, 'dashboard']);
+Route::get('/signout', [PanelController::class, 'signOut'])->name('page.dash.signout');

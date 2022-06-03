@@ -25,4 +25,5 @@ return [
     "sw-alert-succ-title"   => "Success!",
     "sw-alert-err-text"     => "There is a problem. Please try again!",
     "sw-alert-succ-text"    => "Your appointment application has been sent successfully.",
+    "form-null-message"     => "Please do not leave any blank spaces in the form!",
 ];

@@ -139,7 +139,7 @@ const validateEmail = email => {
 };
 
 const validateNum = number => {
-    return number.match(/^\d+$/);
+    return number.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/);
 };
 
 function controlePost(formEl, enter = false) {
@@ -152,13 +152,12 @@ function controlePost(formEl, enter = false) {
         let el = $(`#${formEl[elID]}`);
         if (el.val().trim().length === 0) {
             el.addClass('invalid');
-            $('#form-alert-message').html('Please do not leave any blank spaces in the form.');
+            $('#form-alert-message').html(mapFormNullMessage);
         } else {
             --formElValNull;
             if (el.attr('type') === 'email') {
                 if (!validateEmail(el.val().trim())) {
-                    formElValNull === 0 ? $('#form-alert-message').html('Please enter a valid email address.') :
-                        null;
+                    formElValNull === 0 ? $('#form-alert-message').html(swAlertEmailInvalid) : null;
                     el.addClass('invalid');
                     errEmail = true;
                 } else {
@@ -167,10 +166,9 @@ function controlePost(formEl, enter = false) {
                     el.removeClass('invalid');
                 }
             } else {
-                if (el.attr('type') === 'phone') {
+                if (el.attr('type') === 'tel') {
                     if (!validateNum(el.val().trim())) {
-                        (formElValNull === 0 && !errEmail) ? $('#form-alert-message').html(
-                            'Please enter a valid phone number.') : null;
+                        (formElValNull === 0 && !errEmail) ? $('#form-alert-message').html(swAlertPhoneInvalid) : null;
                         el.addClass('invalid');
                     } else {
                         (formElValNull === 0 && !errEmail) ? $('#form-alert-message').html(null) : null;
@@ -329,7 +327,7 @@ $('.contact-message-button').click(function (e) {
                         };
                         $.ajax({
                             type: 'post',
-                            url: $('form').attr('action'),
+                            url: $('meta[name="mx-post-adress"]').attr('content'),
                             data: data,
                             headers: {
                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

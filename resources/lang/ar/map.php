@@ -25,4 +25,5 @@ return [
     "sw-alert-succ-title"   => "النجاح",
     "sw-alert-err-text"     => "هناك مشكلة. يرجى المحاولة مرة أخرى",
     "sw-alert-succ-text"    => "تم إرسال طلب موعدك بنجاح",
+    "form-null-message"     => "من فضلك لا تترك أي مسافات فارغة في النموذج",
 ];

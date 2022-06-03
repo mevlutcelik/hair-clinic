@@ -25,4 +25,5 @@ return [
     "sw-alert-succ-title"   => "Başarılı!",
     "sw-alert-err-text"     => "Teknik bir problem oldu. Lütfen tekrar deneyin!",
     "sw-alert-succ-text"    => "Randevu başvurunuz başarıyla gönderildi.",
+    "form-null-message"     => "Lütfen formda boş alan bırakmayın!",
 ];

@@ -16,13 +16,22 @@
         </nav>
     </header>
     <div class="header">
-        <form action="{{ route('page.panel.login') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+        @if (session('error'))
+            {{ session('error') }}
+        @endif
+        <form action="{{ route('page.login.post') }}" method="post" autocomplete="off" enctype="multipart/form-data">
             @csrf
             <div class="input">
-                <label for="username">Kullanıcı adı</label>
-                <input type="text" id="username" name="username" placeholder="Kullanıcı adı" required />
+                @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                @endif
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" placeholder="E-posta" required />
             </div>
             <div class="input">
+                @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
                 <label for="password">Şifre</label>
                 <input type="password" id="password" name="password" placeholder="Şifre" required />
             </div>
